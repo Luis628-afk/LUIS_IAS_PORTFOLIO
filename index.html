@@ -12,44 +12,168 @@
     <title>Web Design Mastery | Responsive Portfolio</title>
   </head>
   <body>
+    <!-- Navigation -->
     <nav>
-      <div class="nav__content">
-        <div class="logo"><a href="#">Mitchell</a></div>
-        <label for="check" class="checkbox">
-          <i class="ri-menu-line"></i>
-        </label>
-        <input type="checkbox" name="check" id="check" />
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Resume</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+      <div class="logo"><a href="#home">Luis</a></div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-    <section class="section">
+
+    <!-- Hero Section -->
+    <section class="section" id="home">
       <div class="section__container">
         <div class="content">
           <p class="subtitle">HELLO</p>
+          <span class="hero-emoji">🚀🎁🤑🛺🚕🎑🎟️🛝🖼️</span>
           <h1 class="title">
-            I'm <span>Mitchell<br />a</span> Web Developer
+            I'm <span>Luis Lauz<br />a</span> BSIT Student & Future Developer
           </h1>
           <p class="description">
-            Welcome to my web developer portfolio! I'm Mitchell, a skilled and
-            creative web developer with a passion for creating beautiful,
-            responsive, and user-friendly websites. I've worked on a variety of
-            web projects, ranging from personal blogs to e-commerce platforms.
+            Welcome! I'm Luis, a passionate 3rd year BSIT student focused on
+            building modern, responsive, and efficient applications. I enjoy
+            learning new technologies and creating clean, functional designs.
           </p>
           <div class="action__btns">
             <button class="hire__me">Hire Me</button>
-            <button class="portfolio">Portfolio</button>
+            <button class="portfolio"><a href="#portfolio">Portfolio</a></button>
           </div>
         </div>
         <div class="image">
-          <img src="assets/profile.jpg" alt="profile" />
+          <img src="assets/luis.jpeg" alt="profile" />
         </div>
       </div>
     </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <h2>About Me</h2>
+      <p>
+        Hi! I'm Luis Lauz, a dedicated 3rd year BSIT student with a strong interest
+        in web development, software engineering, and modern technology.
+        I enjoy creating responsive interfaces, solving problems, and building
+        applications that improve user experience. I continuously work on improving my skills
+        as I prepare for my future career in tech.
+      </p>
+    </section>
+
+    <section class="resume" id="resume">
+      <h2>Resume</h2>
+
+      <!-- Summary -->
+      <div class="resume-summary">
+        <h3>Summary</h3>
+        <p>
+          Luis Lauz is a 3rd year BSIT student driven by a passion for web and software 
+          development. Skilled in front-end technologies, UI design, and basic backend 
+          concepts, he is focused on developing real-world projects that demonstrate 
+          clean code, responsiveness, and modern user experiences.
+        </p>
+      </div>
+
+      <!-- Experience -->
+      <div class="resume-experience">
+        <h3>Experience</h3>
+       <div class="resume-item">
+  <h4>Academic Projects | New Era University</h4>
+  <span>2024 - Present</span>
+  <ul>
+    <li>Developed multiple web applications as part of major BSIT coursework.</li>
+    <li>Created responsive UI designs using HTML, CSS, and JavaScript.</li>
+    <li>Collaborated with classmates in group projects focusing on system development.</li>
+    <li>Applied software development principles such as SDLC, debugging, and documentation.</li>
+  </ul>
+</div>
+
+        <div class="resume-item">
+          <h4>Freelance Front-End Developer</h4>
+          <span>2024 - 2025</span>
+          <ul>
+            <li>Created small-scale websites for personal and academic projects.</li>
+            <li>Designed user-friendly layouts using HTML, CSS, and JavaScript.</li>
+            <li>Practiced React fundamentals through hands-on mini-projects.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="resume-education">
+        <h3>Education</h3>
+        <div class="resume-item">
+          <h4>Bachelor of Science in Information Technology</h4>
+          <span>New Era University | 2022 - Present</span>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="resume-skills">
+        <h3>Skills</h3>
+        <ul class="skills-list">
+          <li>HTML5 / CSS3 / JavaScript</li>
+          <li>React (Beginner–Intermediate)</li>
+          <li>Node.js Basics / REST API Fundamentals</li>
+          <li>Responsive Design / UI Building</li>
+          <li>Git / GitHub Workflow</li>
+          <li>Problem Solving & Debugging</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="projects" id="portfolio">
+      <h2>My Write Apps</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="assets/password.png" alt="Project 1" />
+          <div class="card-content">
+            <h3>Password Strength Checker Web App</h3>
+            <p>User types a password and sees: strength meter (Weak / Medium / Strong), color bar, and tips.</p>
+            <a href="1stwrite.html">View Project</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/phising.png" alt="Project 2" />
+          <div class="card-content">
+            <h3>Phishing Email Detector Practice App</h3>
+            <p>User clicks “Phishing” or “Legit”, then sees feedback explaining clues (suspicious links, urgent tone, weird sender, grammar).</p>
+            <a href="2ndwrite.html">View Project</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/php-secure-main-page.png" alt="Project 3" />
+          <div class="card-content">
+            <h3>Secure Login Demo with 2‑Step Concept</h3>
+            <p>Simple mock login form (username + password) plus a second “verification code” step.</p>
+            <a href="3rdwrite.html">View Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact Me</h2>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+      const links = document.querySelectorAll('nav ul li a');
+      for (const link of links) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const target = document.getElementById(targetId);
+          target.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+    </script>
   </body>
 </html>

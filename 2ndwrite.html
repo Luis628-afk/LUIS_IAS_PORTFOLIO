@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing Email Detector | Write App</title>
+
+    <style>
+      :root {
+        --bg: #020617;
+        --card: #0b1220;
+        --accent: #38bdf8;
+        --accent-soft: rgba(56, 189, 248, 0.15);
+        --text: #e5e7eb;
+        --muted: #64748b;
+        --danger: #f97373;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, #0f172a, #020617);
+        color: var(--text);
+      }
+
+      nav {
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(15, 23, 42, 0.9);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+      }
+
+      nav .logo a {
+        color: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+      }
+
+      nav ul a {
+        color: var(--text);
+        font-size: 0.9rem;
+        text-decoration: none;
+      }
+            .back-btn {
+        padding: 0.35rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        background-color: rgba(15, 23, 42, 0.9);
+        color: var(--accent);
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .back-btn:hover {
+        background-color: rgba(30, 64, 175, 0.9);
+        border-color: var(--accent);
+        transform: translateY(-1px);
+        }
+
+      main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+
+      .header {
+        margin-bottom: 2rem;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background-color: var(--accent-soft);
+        color: var(--accent);
+        border-radius: 999px;
+        padding: 0.2rem 0.8rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .header h1 {
+        margin-top: 0.75rem;
+        font-size: 2rem;
+      }
+
+      .header p {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 2.1fr 1.2fr;
+        gap: 1.5rem;
+      }
+
+      .card {
+        background-color: var(--card);
+        border-radius: 14px;
+        padding: 1.4rem;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        margin-bottom: 1rem;
+      }
+
+      .step-tag {
+        font-size: 0.75rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: 0.25rem;
+      }
+
+      .card h2 {
+        font-size: 1.05rem;
+        margin-bottom: 0.4rem;
+        color: var(--accent);
+      }
+
+      .card p {
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      ul.bullets {
+        list-style: disc;
+        margin-left: 1.2rem;
+        margin-top: 0.4rem;
+      }
+
+      ul.bullets li {
+        font-size: 0.88rem;
+        color: var(--muted);
+        margin-bottom: 0.2rem;
+      }
+
+      .email-sample {
+        background: #020617;
+        border-radius: 10px;
+        padding: 0.8rem 0.9rem;
+        margin-top: 0.5rem;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        font-size: 0.82rem;
+        color: var(--text);
+      }
+
+      .email-sample strong {
+        color: var(--danger);
+      }
+
+      .preview img {
+        max-width: 100%;
+        border-radius: 16px;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        box-shadow: 0 25px 40px rgba(15, 23, 42, 0.7);
+      }
+
+      .preview-caption {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo"><a href="index.html#home">Luis</a></div>
+      <ul>
+         <li><a class="back-btn" href="index.html">← Back to Home</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <header class="header">
+        <div class="pill">
+          <span>CYBER SECURITY WRITE APP</span>
+        </div>
+        <h1>Phishing Email Detector Practice</h1>
+        <p>
+          A concept app that trains users to spot red flags in suspicious emails.
+        </p>
+      </header>
+
+      <div class="layout">
+        <section>
+          <article class="card">
+            <div class="step-tag">Step 1</div>
+            <h2>Define the Learning Goal</h2>
+            <p>
+              I want this app to help users practice telling the difference
+              between a real email and a phishing attack.
+            </p>
+            <ul class="bullets">
+              <li>Show short, realistic email examples</li>
+              <li>Let the user choose <strong>Phishing</strong> or <strong>Legit</strong></li>
+              <li>Give clear explanations after each choice</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="step-tag">Step 2</div>
+            <h2>Design the Email View</h2>
+            <p>
+              Each question in the app looks like a mini inbox item or email
+              preview so it feels familiar:
+            </p>
+            <div class="email-sample">
+              <div><strong>From:</strong> security@bank‑verify.com</div>
+              <div><strong>Subject:</strong> Urgent: Verify your account now</div>
+              <div style="margin-top: 0.4rem;">
+                Dear customer, your account will be <strong>locked in 24 hours</strong>
+                if you do not click the link below and confirm your information.
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="step-tag">Step 3</div>
+            <h2>Create the Quiz Logic</h2>
+            <p>
+              Behind each email, I define why it is phishing or safe:
+            </p>
+            <ul class="bullets">
+              <li>Suspicious email address or domain</li>
+              <li>Urgent or threatening language</li>
+              <li>Links that do not match the official website</li>
+              <li>Spelling or grammar mistakes</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="step-tag">Step 4</div>
+            <h2>Explain the Answer</h2>
+            <p>
+              After the user answers, the app shows a short explanation:
+            </p>
+            <ul class="bullets">
+              <li>Highlights the exact red flags in the email</li>
+              <li>Explains what a safe version would look like</li>
+              <li>Teaches the user to pause and think before clicking</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="step-tag">Result</div>
+            <h2>Why This Matters</h2>
+            <p>
+              Many real attacks start with phishing. This write app shows how UI,
+              simple logic, and explanations can help people protect themselves.
+            </p>
+          </article>
+        </section>
+
+        <aside class="preview">
+          <img src="assets/sample_phishing_email.jpg" alt="Phishing detector preview" />
+          <p class="preview-caption">
+            Visual mockup of the phishing detector interface.
+          </p>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>
